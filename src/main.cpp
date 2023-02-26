@@ -19,14 +19,14 @@ typedef union
 
 typedef unsigned long int t_key;
 
-class Hex2Text
+class Text2Hex
 {
 private:
     string readFrom;
     t_key key;
 
 public:
-    Hex2Text(string readFrom, t_key key)
+    Text2Hex(string readFrom, t_key key)
     {
         this->readFrom = readFrom;
         this->key = key;
@@ -75,14 +75,14 @@ public:
     }
 };
 
-class Text2Hex
+class Hex2Text
 {
 private:
     string readFrom;
     t_key key;
 
 public:
-    Text2Hex(string readFrom, t_key key)
+    Hex2Text(string readFrom, t_key key)
     {
         this->readFrom = readFrom;
         this->key = key;
@@ -151,12 +151,12 @@ int main(int argc, char *argv[])
 
     if (string(argv[2]) == "h2t")
     {
-        Hex2Text h2t(string(argv[3]), hash);
+        Text2Hex h2t(string(argv[3]), hash);
         h2t.convert(string(argv[3]) + ".bin");
     }
     else
     {
-        Text2Hex t2h(string(argv[3]), hash);
+        Hex2Text t2h(string(argv[3]), hash);
         t2h.convert(string(argv[3]) + ".txt");
     }
 
